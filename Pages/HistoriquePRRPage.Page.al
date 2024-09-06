@@ -1,6 +1,6 @@
 page 50205 "HistoriquePRRPage"
 {
-    PageType = Document;
+    PageType = List;
     ApplicationArea = All;
     SourceTable = "HistoriquePRRTable";
     Editable = true;
@@ -10,7 +10,7 @@ page 50205 "HistoriquePRRPage"
     {
         area(content)
         {
-            group(General)
+            repeater(Group)
             {
                 field("No calcul"; Rec."No calcul")
                 {

@@ -21,6 +21,23 @@ pageextension 50203 "HistoriquePRTExtPage" extends "Item List"
                     Page.Run(PAGE::HistoriquePRTPage);
                 end;
             }
+            action("Historique PRR")
+            {
+                ApplicationArea = All;
+                Caption = 'Historique PRR';
+                ToolTip = 'Voir l''historique du prix de revient réel pour cet article.';
+                Image = History;
+
+                Promoted = true;
+                PromotedCategory = Category6; // You can choose between Process, Home, New, etc.
+                PromotedIsBig = true;
+                PromotedOnly = false; // Shows in both Actions bar and Promoted toolbar.
+
+                trigger OnAction()
+                begin
+                    Page.Run(PAGE::HistoriquePRRPage);
+                end;
+            }
         }
     }
 }

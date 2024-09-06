@@ -3,6 +3,7 @@ page 50201 "HistoriquePRTPage"
     PageType = List;
     ApplicationArea = All;
     SourceTable = "HistoriquePRTTable";
+    Editable = true;
     Caption = 'Historique PRT';
 
     layout
