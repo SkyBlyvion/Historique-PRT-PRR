@@ -2,5 +2,6 @@ permissionset 50201 HistoriquePRTPerm
 {
     Assignable = true;
     Permissions =
-        tabledata "HistoriquePRT" = RIMD;
+        tabledata "HistoriquePRTTable" = RIMD,
+        page HistoriquePRTPage = X;
 }

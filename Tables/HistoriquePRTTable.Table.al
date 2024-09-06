@@ -1,4 +1,4 @@
-table 50200 "HistoriquePRT"
+table 50200 "HistoriquePRTTable"
 {
     DataClassification = ToBeClassified;
 
@@ -225,28 +225,32 @@ table 50200 "HistoriquePRT"
     }
 
     keys
-    {
+    {   // Clé primaire Composée de "No calcul" et "No article" pour identifier chaque ligne de manière unique.
         key(PK; "No calcul", "No article")
         {
             Clustered = true;
         }
 
-        key(SecondaryKey1; "Date", "Heure") // Define a secondary key
+        // Optimise les recherches basées sur des dates et heures spécifiques.
+        key(SecondaryKey1; "Date", "Heure")
         {
             Enabled = true;
         }
 
-        key(SecondaryKey2; "No commande", "Date", "Heure") // Define a secondary key
+        // Facilite les requêtes sur les numéros de commande avec date et heure.
+        key(SecondaryKey2; "No commande", "Date", "Heure")
         {
             Enabled = true;
         }
 
-        key(SecondaryKey3; "No article", "Date") // Define a secondary key
+        //  Accélère les recherches d'articles par date.
+        key(SecondaryKey3; "No article", "Date")
         {
             Enabled = true;
         }
 
-        key(SecondaryKey4; "Date", "Heure", "No article", "No commande") // Define a secondary key
+        // Permet un accès rapide aux détails filtrés par date, article, et commande.
+        key(SecondaryKey4; "Date", "Heure", "No article", "No commande")
         {
             Enabled = true;
         }
